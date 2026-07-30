@@ -41,9 +41,9 @@ if [ ! -d "smali_src" ]; then
     java -Xmx8g -jar tools/apktool/apktool.jar d assets/VK_v8.188.1.apk -o smali_src -f
 fi
 
-# 4. Copy modified smali files from modified_smali/ to smali_src/ if present
+# 4. Copy modified smali/native patches from modified_smali/ to smali_src/ if present
 if [ -d "modified_smali" ]; then
-    echo "[+] Applying VKall Mod Smali patches..."
+    echo "[+] Applying VKall Mod Smali/native patches..."
     cp -r modified_smali/* smali_src/
 fi
 

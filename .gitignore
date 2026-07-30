@@ -1,0 +1,6 @@
+assets/
+tools/
+decompiled_src/
+smali_src/
+build/
+*.apk

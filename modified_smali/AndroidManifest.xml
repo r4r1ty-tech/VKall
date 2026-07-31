@@ -757,7 +757,7 @@
         <service android:name="com.vkontakte.android.AssistantVerificationService"/>
         <service android:exported="false" android:name="com.vkontakte.android.sync.online.VkOnlineService"/>
         <service android:foregroundServiceType="mediaPlayback" android:name="com.vk.music.playerservice.impl.PlayerService"/>
-        <service android:name="com.my.tracker.campaign.CampaignService"/>
+        <service android:enabled="false" android:name="com.my.tracker.campaign.CampaignService"/>
         <service android:exported="true" android:name="com.vkontakte.android.auto.MusicAndroidAutoMediaService">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService"/>
@@ -794,7 +794,7 @@
                 <data android:scheme="package"/>
             </intent-filter>
         </receiver>
-        <receiver android:exported="true" android:name="com.my.tracker.campaign.CampaignReceiver">
+        <receiver android:enabled="false" android:exported="true" android:name="com.my.tracker.campaign.CampaignReceiver">
             <intent-filter>
                 <action android:name="com.android.vending.INSTALL_REFERRER"/>
             </intent-filter>
@@ -1233,7 +1233,7 @@
                 <action android:name="com.vk.push.GET_DEVICE_ID"/>
             </intent-filter>
         </provider>
-        <service android:enabled="true" android:exported="false" android:name="com.google.firebase.sessions.SessionLifecycleService"/>
+        <service android:enabled="false" android:exported="false" android:name="com.google.firebase.sessions.SessionLifecycleService"/>
         <service android:exported="false" android:name="one.video.calls.sdk.upload.FileUploadService" android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service android:exported="false" android:name="ru.ok.android.externcalls.analytics.internal.upload.UploadService" android:permission="android.permission.BIND_JOB_SERVICE">
             <intent-filter>
@@ -1401,10 +1401,10 @@
         <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:visibleToInstantApps="true"/>
         <meta-data android:name="com.google.gms.fitness.sdk.version" android:value="21.2.0"/>
-        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
-        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
-        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
-        <service android:enabled="true" android:exported="false" android:name="io.appmetrica.analytics.internal.AppMetricaService">
+        <receiver android:enabled="false" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="false" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="false" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="false" android:exported="false" android:name="io.appmetrica.analytics.internal.AppMetricaService">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <action android:name="io.appmetrica.analytics.IAppMetricaService"/>

@@ -1,0 +1,1 @@
+/* VKall: OMID disabled */

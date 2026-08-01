@@ -4,8 +4,13 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
+VKALL_VERSION_NAME="${VKALL_VERSION_NAME:-0.0.1}"
+VKALL_VERSION_CODE="${VKALL_VERSION_CODE:-1}"
+OUT_NAME="VKall-${VKALL_VERSION_NAME}.apk"
+
 echo "=================================================="
 echo "          VKall Mod Auto-Build System"
+echo "          version ${VKALL_VERSION_NAME} (${VKALL_VERSION_CODE})"
 echo "=================================================="
 
 # 1. Check tools
@@ -54,6 +59,22 @@ if [ -d "modified_smali" ]; then
     rm -rf smali_src/build
 fi
 
+# 4b. Stamp VKall release version into apktool.yml
+if [ -f "smali_src/apktool.yml" ]; then
+    echo "[+] Setting versionName=${VKALL_VERSION_NAME} versionCode=${VKALL_VERSION_CODE}"
+    python3 - "$VKALL_VERSION_NAME" "$VKALL_VERSION_CODE" <<'PY'
+from pathlib import Path
+import re
+import sys
+name, code = sys.argv[1], sys.argv[2]
+p = Path("smali_src/apktool.yml")
+text = p.read_text()
+text = re.sub(r"(versionCode:\s*)\d+", rf"\g<1>{code}", text, count=1)
+text = re.sub(r"(versionName:\s*).*", rf"\g<1>{name}", text, count=1)
+p.write_text(text)
+PY
+fi
+
 # 5. Build APK (compiling AndroidManifest.xml for tech.r4r1ty.vkall)
 echo "[+] Assembling modified APK..."
 java -Xmx8g -jar tools/apktool/apktool.jar b smali_src -o build/VK_unsigned.apk
@@ -62,8 +83,15 @@ java -Xmx8g -jar tools/apktool/apktool.jar b smali_src -o build/VK_unsigned.apk
 echo "[+] Signing and Zip-aligning APK..."
 java -jar tools/signer/uber-apk-signer.jar --apks build/VK_unsigned.apk --out build
 
+SIGNED="build/VK_unsigned-aligned-debugSigned.apk"
+if [ ! -f "$SIGNED" ]; then
+    echo "[!] Signed APK not found: $SIGNED"
+    exit 1
+fi
+cp -f "$SIGNED" "build/${OUT_NAME}"
+
 echo ""
 echo "=================================================="
 echo " SUCCESS! Modded APK ready at:"
-echo " build/VK_unsigned-aligned-debugSigned.apk"
+echo " build/${OUT_NAME}"
 echo "=================================================="

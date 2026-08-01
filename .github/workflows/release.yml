@@ -1,0 +1,94 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version without v prefix (e.g. 0.0.1)"
+        required: true
+        default: "0.0.1"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      VKALL_VERSION_NAME: ${{ github.event.inputs.version || github.ref_name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Normalize version
+        id: ver
+        run: |
+          RAW="${{ github.event.inputs.version }}"
+          if [ -z "$RAW" ]; then
+            RAW="${GITHUB_REF_NAME}"
+          fi
+          RAW="${RAW#v}"
+          echo "name=$RAW" >> "$GITHUB_OUTPUT"
+          # keep versionCode small and monotonic for early releases
+          CODE=$(echo "$RAW" | awk -F. '{print ($1*10000)+($2*100)+$3}')
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "tag=v$RAW" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Cache tools and base APK
+        uses: actions/cache@v4
+        with:
+          path: |
+            tools
+            assets/VK_v8.188.1.apk
+          key: vkall-build-tools-vk81881-v1
+
+      - name: Build APK
+        env:
+          VKALL_VERSION_NAME: ${{ steps.ver.outputs.name }}
+          VKALL_VERSION_CODE: ${{ steps.ver.outputs.code }}
+        run: |
+          sudo fallocate -l 8G /swapfile || true
+          sudo chmod 600 /swapfile || true
+          sudo mkswap /swapfile || true
+          sudo swapon /swapfile || true
+          chmod +x ./build.sh
+          ./build.sh
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VKall-${{ steps.ver.outputs.name }}
+          path: build/VKall-${{ steps.ver.outputs.name }}.apk
+          if-no-files-found: error
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: VKall ${{ steps.ver.outputs.name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: build/VKall-${{ steps.ver.outputs.name }}.apk
+          body: |
+            ## VKall ${{ steps.ver.outputs.name }}
+
+            Мод VK (`tech.r4r1ty.vkall`) на базе 8.188.1.
+
+            ### Установка
+            1. Скачай `VKall-${{ steps.ver.outputs.name }}.apk`
+            2. Установи поверх / с нуля (debug-подпись)
+            3. Разреши установку из неизвестных источников при необходимости
+
+            ### Примечание
+            APK подписан debug-ключом (uber-apk-signer). Для обновлений используй тот же ключ / `adb install -r`.

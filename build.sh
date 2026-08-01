@@ -45,6 +45,13 @@ fi
 if [ -d "modified_smali" ]; then
     echo "[+] Applying VKall Mod Smali/native patches..."
     cp -r modified_smali/* smali_src/
+    # PNGs for notification/settings icons must win over stock vector XML of the same name
+    rm -f smali_src/res/drawable/vk_icon_new_logo_vk_24.xml
+    rm -f smali_src/res/drawable/vk_icon_new_logo_vk_outline_28.xml
+    rm -f smali_src/res/drawable/vkpns_default_notification_icon.xml
+    rm -f smali_src/res/drawable-anydpi/logo_vk.xml
+    # drop apktool resource cache so deleted vectors are not repacked
+    rm -rf smali_src/build
 fi
 
 # 5. Build APK (compiling AndroidManifest.xml for tech.r4r1ty.vkall)

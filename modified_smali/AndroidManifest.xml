@@ -987,6 +987,7 @@
         <activity android:name="com.vk.tabbar.settings.impl.suggests.TabbarSuggestActivity" android:theme="@style/Theme.Transparent"/>
         <meta-data android:name="api_secret" android:value="hHbZxrka2uZ6jB1inYsH"/>
         <meta-data android:name="api_id" android:value="2274003"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/vk_icon_new_logo_vk_24"/>
         <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/cornflower_blue"/>
         <service android:enabled="true" android:exported="false" android:name="com.vk.vendor.pushes.proxy.VKPushService"/>
         <service android:enabled="true" android:exported="false" android:name="com.vk.vendor.pushes.FirebasePushService" android:process=":com.vk.push.service" android:stopWithTask="false">

@@ -29,28 +29,12 @@
 .end method
 
 .method public static getDeviceId(Landroid/content/Context;)Ljava/lang/String;
-    .locals 0
-    .param p0    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
+    .locals 1
 
-    .line 1
-    sget-object p0, Lio/appmetrica/analytics/impl/v1;->a:Lio/appmetrica/analytics/impl/u1;
+    # VKall Pass4 stub
+    const-string v0, ""
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lio/appmetrica/analytics/impl/u1;->b()Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+    return-object v0
 .end method
 
 .method public static getLibraryApiLevel()I
@@ -92,60 +76,20 @@
 
 .method public static getReporter(Landroid/content/Context;Ljava/lang/String;)Lio/appmetrica/analytics/IReporter;
     .locals 1
-    .param p0    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/NonNull;
-    .end annotation
 
-    .line 1
-    sget-object v0, Lio/appmetrica/analytics/impl/v1;->a:Lio/appmetrica/analytics/impl/u1;
+    # VKall Pass4 stub
+    const/4 v0, 0x0
 
-    .line 2
-    .line 3
-    invoke-virtual {v0, p0, p1}, Lio/appmetrica/analytics/impl/u1;->a(Landroid/content/Context;Ljava/lang/String;)Lio/appmetrica/analytics/impl/db;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+    return-object v0
 .end method
 
 .method public static getUuid(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/content/Context;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroidx/annotation/Nullable;
-    .end annotation
 
-    .line 1
-    sget-object v0, Lio/appmetrica/analytics/impl/v1;->a:Lio/appmetrica/analytics/impl/u1;
+    # VKall Pass4 stub
+    const-string v0, ""
 
-    .line 2
-    .line 3
-    invoke-virtual {v0, p0}, Lio/appmetrica/analytics/impl/u1;->a(Landroid/content/Context;)Lio/appmetrica/analytics/internal/IdentifiersResult;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    iget-object p0, p0, Lio/appmetrica/analytics/internal/IdentifiersResult;->id:Ljava/lang/String;
-
-    .line 8
-    .line 9
-    return-object p0
+    return-object v0
 .end method
 
 .method public static initWebViewReporting(Landroid/webkit/WebView;)V

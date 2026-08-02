@@ -163,62 +163,23 @@
 .end method
 
 .method public static loadISDemandOnlyBanner(Landroid/app/Activity;Lcom/ironsource/mediationsdk/demandOnly/ISDemandOnlyBannerLayout;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/ironsource/mediationsdk/p;->h()Lcom/ironsource/mediationsdk/p;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0, p0, p1, p2}, Lcom/ironsource/mediationsdk/p;->a(Landroid/app/Activity;Lcom/ironsource/mediationsdk/demandOnly/ISDemandOnlyBannerLayout;Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
+    # VKall Pass4 stub
     return-void
 .end method
 
 .method public static loadISDemandOnlyInterstitial(Landroid/app/Activity;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/ironsource/mediationsdk/p;->h()Lcom/ironsource/mediationsdk/p;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0, p0, p1}, Lcom/ironsource/mediationsdk/p;->a(Landroid/app/Activity;Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
+    # VKall Pass4 stub
     return-void
 .end method
 
 .method public static loadISDemandOnlyRewardedVideo(Landroid/app/Activity;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/ironsource/mediationsdk/p;->h()Lcom/ironsource/mediationsdk/p;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0, p0, p1}, Lcom/ironsource/mediationsdk/p;->b(Landroid/app/Activity;Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
+    # VKall Pass4 stub
     return-void
 .end method
 
@@ -290,41 +251,15 @@
 .end method
 
 .method public static showISDemandOnlyInterstitial(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/ironsource/mediationsdk/p;->h()Lcom/ironsource/mediationsdk/p;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0, p0}, Lcom/ironsource/mediationsdk/p;->c(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
+    # VKall Pass4 stub
     return-void
 .end method
 
 .method public static showISDemandOnlyRewardedVideo(Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    .line 1
-    invoke-static {}, Lcom/ironsource/mediationsdk/p;->h()Lcom/ironsource/mediationsdk/p;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0, p0}, Lcom/ironsource/mediationsdk/p;->a(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
+    # VKall Pass4 stub
     return-void
 .end method

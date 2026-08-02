@@ -5,7 +5,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 VKALL_VERSION_NAME="${VKALL_VERSION_NAME:-0.0.1}"
-VKALL_VERSION_CODE="${VKALL_VERSION_CODE:-1}"
+# Keep above stock VK (56120) so adb install -r does not hit VERSION_DOWNGRADE
+VKALL_VERSION_CODE="${VKALL_VERSION_CODE:-56121}"
 OUT_NAME="VKall-${VKALL_VERSION_NAME}.apk"
 
 echo "=================================================="
@@ -58,6 +59,20 @@ if [ -d "modified_smali" ]; then
     # drop apktool resource cache so deleted vectors are not repacked
     rm -rf smali_src/build
 fi
+
+# 4a. Launcher / «Приложения» show @string/app_name — rename VK → VKall
+echo "[+] Renaming app_name to VKall"
+python3 - <<'PY'
+from pathlib import Path
+old = '<string name="app_name">VK</string>'
+new = '<string name="app_name">VKall</string>'
+for p in Path("smali_src/res").rglob("strings.xml"):
+    text = p.read_text(encoding="utf-8")
+    if old not in text:
+        continue
+    p.write_text(text.replace(old, new), encoding="utf-8")
+    print(f"  {p}")
+PY
 
 # 4b. Stamp VKall release version into apktool.yml
 if [ -f "smali_src/apktool.yml" ]; then

@@ -1155,7 +1155,7 @@
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="" android:name="com.vk.security.proxy.ProxySecurityActivity"/>
         <service android:enabled="true" android:exported="false" android:name="com.vk.traceprofiler.TraceProfilerServiceImpl" android:stopWithTask="false"/>
         <receiver android:enabled="true" android:exported="false" android:name="com.vk.traceprofiler.TraceProfilerReceiver"/>
-        <provider android:enabled="false" android:authorities="com.vkontakte.android.metric.performance.AppMeasuringContentProvider" android:exported="false" android:initOrder="0x80000000" android:name="com.vk.metrics.performance.appstart.AppMeasuringContentProvider"/>
+        <provider android:authorities="com.vkontakte.android.metric.performance.AppMeasuringContentProvider" android:exported="false" android:initOrder="0x80000000" android:name="com.vk.metrics.performance.appstart.AppMeasuringContentProvider"/>
         <activity android:name="com.vk.inappreview.impl.internal.PlayCoreDialogWrapperActivityProxy" android:theme="@style/Theme.PlayCore.Transparent"/>
         <provider android:authorities="com.vkontakte.android.DeviceIdContentProvider" android:exported="true" android:name="com.vk.core.deviceid.contentprovider.DeviceIdContentProvider" android:permission="com.vkontakte.android.permission.ACCESS_DATA"/>
         <provider android:authorities="com.vkontakte.android.firebaseinitproviderwrapper" android:exported="false" android:initOrder="100" android:name="com.vk.core.firebase.providers.FirebaseInitProviderWrapper"/>
@@ -1345,7 +1345,7 @@
         <activity android:exported="false" android:label="" android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity" android:theme="@style/EasyPermissions.Transparent"/>
         <meta-data android:name="ru.ok.tracer.startup.Initializer@b7b8ba75-c336-4dee-8e2a-64ef488e0218" android:value="ru.ok.tracer.crash.report.CrashReportInitializer"/>
         <meta-data android:name="ru.ok.tracer.startup.Initializer@80685d9b-4882-4674-a8d8-e618b619d67c" android:value="ru.ok.tracer.opentelemetry.OpenTelemetryLazyInitializer"/>
-        <provider android:enabled="false" android:authorities="com.vkontakte.android.tracer-startup" android:exported="false" android:name="ru.ok.tracer.startup.InitializationProvider"/>
+        <provider android:authorities="com.vkontakte.android.tracer-startup" android:exported="false" android:name="ru.ok.tracer.startup.InitializationProvider"/>
         <meta-data android:name="ru.ok.tracer.startup.Initializer@25573e8a-bb0f-473f-938a-ca5b3541bda1" android:value="ru.ok.tracer.utils.LoggerInitializer"/>
         <meta-data android:name="ru.ok.tracer.startup.Initializer@e416cfb4-5661-4523-b12c-0ff4ccabd436" android:value="ru.ok.tracer.TracerInitializer"/>
         <meta-data android:name="ru.ok.tracer.startup.Initializer@c776f0d5-2110-4920-b53e-7b72536d8135" android:value="ru.ok.tracer.heap.dumps.HeapDumpInitializer"/>

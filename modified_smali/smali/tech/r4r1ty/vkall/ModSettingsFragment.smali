@@ -143,7 +143,7 @@
 
     invoke-direct {v3, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v4, "Шифрование чатов (AES-256-GCM)"
+    const-string v4, "Шифрование чатов"
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -157,7 +157,7 @@
 
     invoke-direct {v3, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v4, "Совместимо с iziVK ([ENC] + AES-GCM).\nОдинаковый пароль у обоих с модом.\nВложения VK не шифруются."
+    const-string v4, "Один алгоритм: AES-256-GCM.\nОдинаковый пароль у обоих собеседников."
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -179,7 +179,7 @@
 
     iput-object v3, p0, Ltech/r4r1ty/vkall/ModSettingsFragment;->b:Landroid/widget/CheckBox;
 
-    const-string v7, "Шифровать исходящие сообщения"
+    const-string v7, "Шифрование сообщений"
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -268,7 +268,7 @@
 
     invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "\nРасшифрованные сообщения с 🔒.\nПароль должен совпадать у обоих."
+    const-string p2, "\nВкл — все исходящие шифруются.\nВыкл — обычный текст.\n🔒 = успешно расшифровано."
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

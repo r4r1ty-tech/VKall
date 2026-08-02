@@ -6,12 +6,8 @@ import android.content.SharedPreferences;
 
 /**
  * High-level IM crypto hooks for VKall.
- * Prefs: {@code vkall_im_crypto}
- * <ul>
- *   <li>{@code master_enabled} — encrypt outgoing when true</li>
- *   <li>{@code password} — shared passphrase (iziVK-compatible KDF)</li>
- *   <li>{@code enc_<peerId>} — optional per-peer override (true/false)</li>
- * </ul>
+ * Один алгоритм (AES-256-GCM), один мастер-тумблер.
+ * Prefs {@code vkall_im_crypto}: {@code master_enabled}, {@code password}.
  */
 public final class MsgCrypto {
 
@@ -71,24 +67,9 @@ public final class MsgCrypto {
         }
     }
 
+    /** Per-peer API kept for hooks; always follows master switch. */
     public static boolean isEnabledForPeer(int peerId) {
-        SharedPreferences p = prefs();
-        if (p == null || !isMasterEnabled()) {
-            return false;
-        }
-        String key = "enc_" + peerId;
-        if (p.contains(key)) {
-            return p.getBoolean(key, true);
-        }
-        // master on → encrypt all peers by default
-        return true;
-    }
-
-    public static void setEnabledForPeer(int peerId, boolean enabled) {
-        SharedPreferences p = prefs();
-        if (p != null) {
-            p.edit().putBoolean("enc_" + peerId, enabled).apply();
-        }
+        return isMasterEnabled();
     }
 
     private static String passphrase() {

@@ -285,7 +285,7 @@
         <meta-data android:name="com.vk.ok_api_key" android:value="CFJCCIJGDIHBABABA"/>
         <activity android:name="com.vkontakte.android.space.VKManageSpaceActivity" android:noHistory="true" android:theme="@style/SplashTheme"/>
         <activity android:name="com.vk.core.util.RecreateActivity" android:process=":phoenix" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:exported="true" android:finishOnTaskLaunch="true" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.vkontakte.android.MainActivity" android:theme="@style/SplashTheme" android:windowSoftInputMode="adjustResize">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:exported="true" android:finishOnTaskLaunch="true" android:label="VKall" android:launchMode="singleTop" android:name="com.vkontakte.android.MainActivity" android:theme="@style/SplashTheme" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
@@ -296,252 +296,252 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.SpecialEventIcon1" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.SpecialEventIcon1" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_sweetly" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate9" android:roundIcon="@mipmap/ic_launcher_sweetly_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_sweetly" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate9" android:roundIcon="@mipmap/ic_launcher_sweetly_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_peony" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate8" android:roundIcon="@mipmap/ic_launcher_peony_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_peony" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate8" android:roundIcon="@mipmap/ic_launcher_peony_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_cloud" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate7" android:roundIcon="@mipmap/ic_launcher_cloud_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_cloud" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate7" android:roundIcon="@mipmap/ic_launcher_cloud_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_retro" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate6" android:roundIcon="@mipmap/ic_launcher_retro_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_retro" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate6" android:roundIcon="@mipmap/ic_launcher_retro_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate5" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate5" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate4" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate4" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate3" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate3" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_horse" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate2" android:roundIcon="@mipmap/ic_launcher_horse_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_horse" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate2" android:roundIcon="@mipmap/ic_launcher_horse_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate1" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIconDuplicate1" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_bouquet" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon10" android:roundIcon="@mipmap/ic_launcher_bouquet_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_bouquet" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon10" android:roundIcon="@mipmap/ic_launcher_bouquet_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon9" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon9" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon8" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon8" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon7" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon7" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon6" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon6" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_leopard" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon5" android:roundIcon="@mipmap/ic_launcher_leopard_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_leopard" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon5" android:roundIcon="@mipmap/ic_launcher_leopard_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_constellation" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon4" android:roundIcon="@mipmap/ic_launcher_constellation_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_constellation" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon4" android:roundIcon="@mipmap/ic_launcher_constellation_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_thaw" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon3" android:roundIcon="@mipmap/ic_launcher_thaw_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_thaw" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon3" android:roundIcon="@mipmap/ic_launcher_thaw_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_oldschool" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon2" android:roundIcon="@mipmap/ic_launcher_oldschool_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_oldschool" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon2" android:roundIcon="@mipmap/ic_launcher_oldschool_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon1" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.EventIcon1" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev6" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev9" android:roundIcon="@mipmap/ic_launcher_dev6_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev6" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev9" android:roundIcon="@mipmap/ic_launcher_dev6_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev7" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev8" android:roundIcon="@mipmap/ic_launcher_dev7_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev7" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev8" android:roundIcon="@mipmap/ic_launcher_dev7_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev2" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev7" android:roundIcon="@mipmap/ic_launcher_dev2_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev2" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev7" android:roundIcon="@mipmap/ic_launcher_dev2_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev6" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev6" android:roundIcon="@mipmap/ic_launcher_dev6_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev6" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev6" android:roundIcon="@mipmap/ic_launcher_dev6_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_text_logo" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev5" android:roundIcon="@mipmap/ic_launcher_text_logo_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_text_logo" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev5" android:roundIcon="@mipmap/ic_launcher_text_logo_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev4" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev4" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev3" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev3" android:roundIcon="@mipmap/ic_launcher_dev3_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev3" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev3" android:roundIcon="@mipmap/ic_launcher_dev3_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_test" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev2" android:roundIcon="@mipmap/ic_launcher_test_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_test" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev2" android:roundIcon="@mipmap/ic_launcher_test_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev" android:roundIcon="@mipmap/ic_launcher_dev_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_dev" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIconDev" android:roundIcon="@mipmap/ic_launcher_dev_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon6" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon6" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon5" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon5" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon4" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon4" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_shine" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon3" android:roundIcon="@mipmap/ic_launcher_shine_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_shine" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon3" android:roundIcon="@mipmap/ic_launcher_shine_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_abstract" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon2" android:roundIcon="@mipmap/ic_launcher_abstract_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_abstract" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon2" android:roundIcon="@mipmap/ic_launcher_abstract_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_fresh" android:label="@string/app_name" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon1" android:roundIcon="@mipmap/ic_launcher_fresh_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/mp_launcher_fresh" android:label="VKall" android:name="com.vk.android.launcher.icons.IconAlias.StaticIcon1" android:roundIcon="@mipmap/ic_launcher_fresh_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
-        <activity-alias android:enabled="true" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="@string/app_name" android:name="tech.r4r1ty.vkall.LauncherIcon" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
+        <activity-alias android:enabled="true" android:exported="true" android:icon="@mipmap/mp_launcher" android:label="VKall" android:name="tech.r4r1ty.vkall.LauncherIcon" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.vkontakte.android.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -564,7 +564,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.vkontakte.android.LinkRedirActivity" android:theme="@style/SplashTheme">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:label="VKall" android:launchMode="singleTask" android:name="com.vkontakte.android.LinkRedirActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -664,8 +664,8 @@
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/video" android:name="com.vk.libvideo.VideoWrapperActivity"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/video" android:name="com.vk.libvideo.pip.v2.activity.VideoContainerActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <activity android:autoRemoveFromRecents="true" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:label="@string/video" android:launchMode="singleTask" android:name="com.vk.libvideo.pip.v2.activity.VideoContainerActivityWithPip" android:supportsPictureInPicture="true" android:taskAffinity="com.vk.libvideo.pip.v2.activity.VideoContainerActivityWithPip" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|uiMode|screenSize" android:exported="true" android:label="@string/app_name" android:name="com.vkontakte.android.sharing.SharingExternalActivity" android:theme="@style/TranslucentStyle">
-            <intent-filter android:label="@string/app_name">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|uiMode|screenSize" android:exported="true" android:label="VKall" android:name="com.vkontakte.android.sharing.SharingExternalActivity" android:theme="@style/TranslucentStyle">
+            <intent-filter android:label="VKall">
                 <action android:name="android.intent.action.SEND"/>
                 <action android:name="android.intent.action.SEND_MULTIPLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>

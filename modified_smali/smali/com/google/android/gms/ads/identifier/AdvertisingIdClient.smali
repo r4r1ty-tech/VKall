@@ -124,17 +124,15 @@
 
 .method public static getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-    .locals 3
+    .locals 2
 
-    new-instance v0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+    new-instance v0, Ljava/io/IOException;
 
-    const-string v1, ""
+    const-string v1, "GAID blocked"
 
-    const/4 v2, 0x1
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;-><init>(Ljava/lang/String;Z)V
-
-    return-object v0
+    throw v0
 
 .end method
 
@@ -157,17 +155,15 @@
 
 .method private final zzf(I)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-    .locals 3
+    .locals 2
 
-    new-instance v0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+    new-instance v0, Ljava/io/IOException;
 
-    const-string v1, ""
+    const-string v1, "GAID blocked"
 
-    const/4 v2, 0x1
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;-><init>(Ljava/lang/String;Z)V
-
-    return-object v0
+    throw v0
 
 .end method
 
@@ -197,17 +193,15 @@
 
 .method public getInfo()Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-    .locals 3
+    .locals 2
 
-    new-instance v0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+    new-instance v0, Ljava/io/IOException;
 
-    const-string v1, ""
+    const-string v1, "GAID blocked"
 
-    const/4 v2, 0x1
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;-><init>(Ljava/lang/String;Z)V
-
-    return-object v0
+    throw v0
 
 .end method
 

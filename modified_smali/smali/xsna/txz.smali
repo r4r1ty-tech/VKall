@@ -99,7 +99,9 @@
 
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
     return-object v0
 

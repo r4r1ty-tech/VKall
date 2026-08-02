@@ -74,7 +74,7 @@
 
     .locals 9
 
-    # VKall: block stats.track* API requests
+    # VKall: block stats.track* / statEvents.* / stats.benchmark
     iget-object v0, p0, Lxsna/jx2;->e:Lxsna/rsg0;
 
     if-eqz v0, :vkall_stats_ok
@@ -87,10 +87,27 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    move-result v1
+
+    if-eqz v1, :vkall_stats_block
+
+    const-string v1, "statEvents."
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :vkall_stats_block
+
+    const-string v1, "stats.benchmark"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
     move-result v0
 
     if-nez v0, :vkall_stats_ok
 
+    :vkall_stats_block
     sget-object v0, Lio/reactivex/rxjava3/internal/disposables/EmptyDisposable;->INSTANCE:Lio/reactivex/rxjava3/internal/disposables/EmptyDisposable;
 
     return-object v0

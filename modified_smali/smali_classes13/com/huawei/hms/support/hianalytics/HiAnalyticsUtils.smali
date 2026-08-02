@@ -996,37 +996,16 @@
 
 # virtual methods
 .method public enableLog()V
-    .locals 1
+    .locals 0
 
-    .line 4
-    iget-boolean v0, p0, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b:Z
-
-    if-nez v0, :cond_0
-
-    .line 5
-    invoke-static {}, Lcom/huawei/hms/hatool/HmsHiAnalyticsUtils;->enableLog()V
-
-    :cond_0
+    # VKall Pass4 stub
     return-void
 .end method
 
 .method public enableLog(Landroid/content/Context;)V
-    .locals 1
+    .locals 0
 
-    .line 1
-    iget-boolean v0, p0, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b:Z
-
-    if-nez v0, :cond_0
-
-    .line 2
-    invoke-static {}, Lcom/huawei/hms/hatool/HmsHiAnalyticsUtils;->enableLog()V
-
-    return-void
-
-    .line 3
-    :cond_0
-    invoke-static {p1}, Lcom/huawei/hianalytics/util/HiAnalyticTools;->enableLog(Landroid/content/Context;)V
-
+    # VKall Pass4 stub
     return-void
 .end method
 
@@ -1210,12 +1189,7 @@
 .method public onBuoyEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 1
-    invoke-virtual {p0, p1, p2, p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->onEvent2(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2
-    .line 3
-    .line 4
+    # VKall Pass4 stub
     return-void
 .end method
 
@@ -1234,218 +1208,29 @@
 .end method
 
 .method public onNewEvent(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;)V
-    .locals 5
+    .locals 0
 
-    .line 1
-    invoke-static {p1}, Lcom/huawei/hms/utils/AnalyticsSwitchHolder;->getAndRefreshAnalyticsState(Landroid/content/Context;)I
-
-    move-result v0
-
-    if-eqz p3, :cond_5
-
-    .line 2
-    invoke-interface {p3}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    if-nez p1, :cond_0
-
-    goto :goto_2
-
-    .line 3
-    :cond_0
-    invoke-virtual {p0}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->getInitFlag()Z
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-eq v0, v2, :cond_1
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_1
-    move v2, v3
-
-    .line 4
-    :goto_0
-    invoke-direct {p0, v1, v2, p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(ZZLjava/util/Map;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 5
-    invoke-direct {p0, p1, p2, p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;)V
-
-    :cond_2
-    if-ne v0, v4, :cond_5
-
-    if-nez v1, :cond_3
-
-    goto :goto_2
-
-    .line 6
-    :cond_3
-    iget-boolean v0, p0, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b:Z
-
-    if-nez v0, :cond_4
-
-    .line 7
-    invoke-static {p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Ljava/util/Map;)Ljava/util/LinkedHashMap;
-
-    move-result-object v0
-
-    invoke-static {v3, p2, v0}, Lcom/huawei/hms/hatool/HmsHiAnalyticsUtils;->onEvent(ILjava/lang/String;Ljava/util/LinkedHashMap;)V
-
-    .line 8
-    invoke-static {p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Ljava/util/Map;)Ljava/util/LinkedHashMap;
-
-    move-result-object p3
-
-    invoke-static {v4, p2, p3}, Lcom/huawei/hms/hatool/HmsHiAnalyticsUtils;->onEvent(ILjava/lang/String;Ljava/util/LinkedHashMap;)V
-
-    goto :goto_1
-
-    .line 9
-    :cond_4
-    invoke-static {p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Ljava/util/Map;)Ljava/util/LinkedHashMap;
-
-    move-result-object v0
-
-    invoke-static {p1, v3, p2, v0}, Lcom/huawei/hms/stats/HiAnalyticsOfCpUtils;->onEvent(Landroid/content/Context;ILjava/lang/String;Ljava/util/LinkedHashMap;)V
-
-    .line 10
-    invoke-static {p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Ljava/util/Map;)Ljava/util/LinkedHashMap;
-
-    move-result-object p3
-
-    invoke-static {p1, v4, p2, p3}, Lcom/huawei/hms/stats/HiAnalyticsOfCpUtils;->onEvent(Landroid/content/Context;ILjava/lang/String;Ljava/util/LinkedHashMap;)V
-
-    .line 11
-    :goto_1
-    invoke-direct {p0, p1}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b(Landroid/content/Context;)V
-
-    :cond_5
-    :goto_2
+    # VKall Pass4 stub
     return-void
 .end method
 
 .method public onNewEvent(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;I)V
-    .locals 4
+    .locals 0
 
-    const/4 v0, 0x1
-
-    if-eqz p4, :cond_0
-
-    if-eq p4, v0, :cond_0
-
-    return-void
-
-    .line 12
-    :cond_0
-    invoke-static {p1}, Lcom/huawei/hms/utils/AnalyticsSwitchHolder;->getAndRefreshAnalyticsState(Landroid/content/Context;)I
-
-    move-result v1
-
-    if-eqz p3, :cond_6
-
-    .line 13
-    invoke-interface {p3}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_6
-
-    if-nez p1, :cond_1
-
-    goto :goto_2
-
-    .line 14
-    :cond_1
-    invoke-virtual {p0}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->getInitFlag()Z
-
-    move-result v2
-
-    const/4 v3, 0x2
-
-    if-eq v1, v3, :cond_2
-
-    move v3, v0
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v3, 0x0
-
-    .line 15
-    :goto_0
-    invoke-direct {p0, v2, v3, p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(ZZLjava/util/Map;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    .line 16
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;I)V
-
-    :cond_3
-    if-ne v1, v0, :cond_6
-
-    if-nez v2, :cond_4
-
-    goto :goto_2
-
-    .line 17
-    :cond_4
-    iget-boolean v0, p0, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b:Z
-
-    if-nez v0, :cond_5
-
-    .line 18
-    invoke-static {p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Ljava/util/Map;)Ljava/util/LinkedHashMap;
-
-    move-result-object p3
-
-    invoke-static {p4, p2, p3}, Lcom/huawei/hms/hatool/HmsHiAnalyticsUtils;->onEvent(ILjava/lang/String;Ljava/util/LinkedHashMap;)V
-
-    goto :goto_1
-
-    .line 19
-    :cond_5
-    invoke-static {p3}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->a(Ljava/util/Map;)Ljava/util/LinkedHashMap;
-
-    move-result-object p3
-
-    invoke-static {p1, p4, p2, p3}, Lcom/huawei/hms/stats/HiAnalyticsOfCpUtils;->onEvent(Landroid/content/Context;ILjava/lang/String;Ljava/util/LinkedHashMap;)V
-
-    .line 20
-    :goto_1
-    invoke-direct {p0, p1}, Lcom/huawei/hms/support/hianalytics/HiAnalyticsUtils;->b(Landroid/content/Context;)V
-
-    :cond_6
-    :goto_2
+    # VKall Pass4 stub
     return-void
 .end method
 
 .method public onReport(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;)V
     .locals 0
 
+    # VKall Pass4 stub
     return-void
-
 .end method
 
 .method public onReport(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;I)V
     .locals 0
 
+    # VKall Pass4 stub
     return-void
-
 .end method

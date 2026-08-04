@@ -78,7 +78,7 @@ jobs:
           name: VKall ${{ steps.ver.outputs.name }}
           draft: false
           prerelease: false
-          generate_release_notes: true
+          generate_release_notes: false
           files: build/VKall-${{ steps.ver.outputs.name }}.apk
           body: |
             ## VKall ${{ steps.ver.outputs.name }}

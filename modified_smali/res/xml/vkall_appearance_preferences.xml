@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/vkall_appearance_category_main"
+        android:key="vkall_appearance_cat_main"
+        app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_stories_disable_title"
+            android:summary="@string/vkall_stories_disable_summary"
+            android:key="vkall_stories_disable"
+            android:defaultValue="false"
+            android:icon="@drawable/vk_icon_story_outline_28" />
+    </PreferenceCategory>
+</PreferenceScreen>

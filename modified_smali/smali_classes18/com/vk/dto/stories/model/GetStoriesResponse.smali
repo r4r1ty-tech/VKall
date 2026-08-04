@@ -164,6 +164,8 @@
     .line 36
     iput-object p6, p0, Lcom/vk/dto/stories/model/GetStoriesResponse;->g:Lcom/vk/dto/stories/model/ideas/StoryIdeasBlock;
 
+    invoke-static {p0}, Ltech/r4r1ty/vkall/stories/StoriesBlock;->strip(Lcom/vk/dto/stories/model/GetStoriesResponse;)V
+
     return-void
 .end method
 
@@ -250,6 +252,8 @@
 
     iput-object p1, p0, Lcom/vk/dto/stories/model/GetStoriesResponse;->g:Lcom/vk/dto/stories/model/ideas/StoryIdeasBlock;
 
+    invoke-static {p0}, Ltech/r4r1ty/vkall/stories/StoriesBlock;->strip(Lcom/vk/dto/stories/model/GetStoriesResponse;)V
+
     return-void
 .end method
 
@@ -306,6 +310,8 @@
 
     iput-object p1, p0, Lcom/vk/dto/stories/model/GetStoriesResponse;->g:Lcom/vk/dto/stories/model/ideas/StoryIdeasBlock;
 
+    invoke-static {p0}, Ltech/r4r1ty/vkall/stories/StoriesBlock;->strip(Lcom/vk/dto/stories/model/GetStoriesResponse;)V
+
     return-void
 .end method
 
@@ -354,6 +360,8 @@
 
     .line 17
     iput-object p1, p0, Lcom/vk/dto/stories/model/GetStoriesResponse;->g:Lcom/vk/dto/stories/model/ideas/StoryIdeasBlock;
+
+    invoke-static {p0}, Ltech/r4r1ty/vkall/stories/StoriesBlock;->strip(Lcom/vk/dto/stories/model/GetStoriesResponse;)V
 
     return-void
 .end method
@@ -606,6 +614,19 @@
     .line 69
     :cond_7
     :goto_5
+    invoke-static {}, Ltech/r4r1ty/vkall/stories/StoriesBlock;->disabled()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_vkall_stories_keep
+
+    iget-object v8, v1, Lcom/vk/dto/stories/model/GetStoriesResponse;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v8}, Ljava/util/ArrayList;->clear()V
+
+    goto :cond_e
+
+    :cond_vkall_stories_keep
     const-string v8, "ads"
 
     invoke-virtual {v2, v8}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;

@@ -17,6 +17,6 @@
             android:summary="@string/vkall_encryption_compat_summary"
             android:key="vkall_enc_key"
             android:selectable="false"
-            android:icon="@drawable/vk_icon_unlock_outline_20" />
+            android:icon="@drawable/vk_icon_key_outline_28" />
     </PreferenceCategory>
 </PreferenceScreen>

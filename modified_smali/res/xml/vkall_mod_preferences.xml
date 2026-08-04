@@ -22,5 +22,11 @@
             android:summary="@string/vkall_privacy_summary"
             android:key="vkall_privacy"
             android:icon="@drawable/vk_icon_privacy_outline_28" />
+        <Preference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_appearance_title"
+            android:summary="@string/vkall_appearance_summary"
+            android:key="vkall_appearance"
+            android:icon="@drawable/vk_icon_palette_outline_28" />
     </PreferenceCategory>
 </PreferenceScreen>

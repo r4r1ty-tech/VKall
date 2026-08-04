@@ -8,11 +8,10 @@ import java.util.UUID;
 
 /**
  * Stable fake device identity + Build spoof for VKall.
- * Prefs {@code vkall_privacy}. IDs generated once per install.
+ * Prefs live in {@code <package>_preferences} (same as PreferenceFragment).
  */
 public final class DevicePrivacyShield {
 
-    /** Same store as PreferenceFragment: {@code <package>_preferences}. */
     public static final String KEY_SPOOF = "vkall_privacy_spoof";
     public static final String KEY_SPOOF_IDS = "vkall_privacy_spoof_ids";
     public static final String KEY_EMPTY_FP = "vkall_privacy_empty_fp";
@@ -22,8 +21,12 @@ public final class DevicePrivacyShield {
     public static final String KEY_GAID = "vkall_privacy_gaid";
     public static final String KEY_DEVICE_ID = "vkall_privacy_device_id";
 
+    public static final String PROFILE_PIXEL7 = "pixel7";
+    public static final String PROFILE_PIXEL7_PRO = "pixel7pro";
     public static final String PROFILE_PIXEL8 = "pixel8";
+    public static final String PROFILE_PIXEL8_PRO = "pixel8pro";
     public static final String PROFILE_PIXEL9 = "pixel9";
+    public static final String PROFILE_PIXEL9_PRO = "pixel9pro";
     public static final String PROFILE_PIXEL10 = "pixel10";
 
     private DevicePrivacyShield() {
@@ -91,6 +94,14 @@ public final class DevicePrivacyShield {
         if (p != null && profile != null) {
             p.edit().putString(KEY_PROFILE, profile).apply();
         }
+    }
+
+    /** Human-readable model for settings UI. */
+    public static String profileLabel() {
+        if (!spoofEnabled()) {
+            return "Спуф выключен";
+        }
+        return "Google " + model();
     }
 
     public static void resetIds() {
@@ -163,7 +174,6 @@ public final class DevicePrivacyShield {
         }
     }
 
-    /** RealDeviceId / ads_android_id / push device_id */
     public static String deviceId() {
         if (!spoofIdsEnabled()) {
             return null;
@@ -171,7 +181,6 @@ public final class DevicePrivacyShield {
         return ensureDeviceId();
     }
 
-    /** Build-only hash replacement for m8f0.a() */
     public static String buildHash() {
         if (!spoofEnabled()) {
             return null;
@@ -179,7 +188,6 @@ public final class DevicePrivacyShield {
         return md5Hex(buildFingerprintString());
     }
 
-    /** Settings.Secure.ANDROID_ID replacement for libverify */
     public static String androidId() {
         if (!spoofIdsEnabled()) {
             return null;
@@ -187,7 +195,6 @@ public final class DevicePrivacyShield {
         return ensureAndroidId();
     }
 
-    /** GAID for AdvertisingIdClient */
     public static String gaid() {
         if (!spoofIdsEnabled()) {
             return null;
@@ -210,28 +217,46 @@ public final class DevicePrivacyShield {
         if (!spoofEnabled()) {
             return null;
         }
-        String p = profileId();
-        if (PROFILE_PIXEL8.equals(p)) {
-            return "Pixel 8";
+        switch (profileId()) {
+            case PROFILE_PIXEL7:
+                return "Pixel 7";
+            case PROFILE_PIXEL7_PRO:
+                return "Pixel 7 Pro";
+            case PROFILE_PIXEL8:
+                return "Pixel 8";
+            case PROFILE_PIXEL8_PRO:
+                return "Pixel 8 Pro";
+            case PROFILE_PIXEL9_PRO:
+                return "Pixel 9 Pro";
+            case PROFILE_PIXEL10:
+                return "Pixel 10";
+            case PROFILE_PIXEL9:
+            default:
+                return "Pixel 9";
         }
-        if (PROFILE_PIXEL10.equals(p)) {
-            return "Pixel 10";
-        }
-        return "Pixel 9";
     }
 
     public static String device() {
         if (!spoofEnabled()) {
             return null;
         }
-        String p = profileId();
-        if (PROFILE_PIXEL8.equals(p)) {
-            return "shiba";
+        switch (profileId()) {
+            case PROFILE_PIXEL7:
+                return "panther";
+            case PROFILE_PIXEL7_PRO:
+                return "cheetah";
+            case PROFILE_PIXEL8:
+                return "shiba";
+            case PROFILE_PIXEL8_PRO:
+                return "husky";
+            case PROFILE_PIXEL9_PRO:
+                return "caiman";
+            case PROFILE_PIXEL10:
+                return "mustang";
+            case PROFILE_PIXEL9:
+            default:
+                return "tokay";
         }
-        if (PROFILE_PIXEL10.equals(p)) {
-            return "mustang";
-        }
-        return "tokay";
     }
 
     public static String brand() {
@@ -260,14 +285,20 @@ public final class DevicePrivacyShield {
         if (!spoofEnabled()) {
             return null;
         }
-        String p = profileId();
-        if (PROFILE_PIXEL8.equals(p)) {
-            return "google/shiba/shiba:15/AP4A.250205.002/12851432:user/release-keys";
+        String d = device();
+        switch (profileId()) {
+            case PROFILE_PIXEL7:
+            case PROFILE_PIXEL7_PRO:
+                return "google/" + d + "/" + d + ":14/AP2A.240805.005/12025110:user/release-keys";
+            case PROFILE_PIXEL10:
+                return "google/" + d + "/" + d + ":16/BP2A.250605.001/14000000:user/release-keys";
+            case PROFILE_PIXEL8:
+            case PROFILE_PIXEL8_PRO:
+            case PROFILE_PIXEL9:
+            case PROFILE_PIXEL9_PRO:
+            default:
+                return "google/" + d + "/" + d + ":15/AP4A.250205.002/12851432:user/release-keys";
         }
-        if (PROFILE_PIXEL10.equals(p)) {
-            return "google/mustang/mustang:16/BP2A.250605.001/14000000:user/release-keys";
-        }
-        return "google/tokay/tokay:15/AP4A.250205.002/12851432:user/release-keys";
     }
 
     private static String buildFingerprintString() {
@@ -279,8 +310,6 @@ public final class DevicePrivacyShield {
         if (!spoofIdsEnabled()) {
             return "Спуф ID выключен";
         }
-        String aid = ensureAndroidId();
-        String g = ensureGaid();
-        return "android_id=" + aid + "\ngaid=" + g;
+        return "android_id=" + ensureAndroidId() + "\ngaid=" + ensureGaid();
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
-        android:title="@string/vkall_privacy_category_main"
-        android:key="vkall_privacy_cat_main"
+        android:title="@string/vkall_privacy_category_device"
+        android:key="vkall_privacy_cat_device"
         app:layout="@layout/item_preference_category">
         <com.vk.prefui.views.MaterialSwitchPreference
             android:layout="@layout/item_preference"
@@ -12,52 +12,64 @@
             android:defaultValue="true"
             android:icon="@drawable/vk_icon_privacy_outline_28" />
         <com.vk.prefui.views.SummaryListPreference
-            android:layout="@layout/item_preference"
+            android:layout="@layout/item_preference_with_value"
             android:title="@string/vkall_privacy_profile_title"
-            android:summary="@string/vkall_privacy_profile_summary"
+            android:summary="%s"
             android:key="vkall_privacy_profile"
             android:defaultValue="pixel9"
-            android:dialogTitle="@string/vkall_privacy_profile_title"
+            android:dialogTitle="@string/vkall_privacy_profile_dialog"
             android:entries="@array/vkall_privacy_profile_entries"
-            android:entryValues="@array/vkall_privacy_profile_values" />
-        <com.vk.prefui.views.MaterialSwitchPreference
-            android:layout="@layout/item_preference"
-            android:title="@string/vkall_privacy_spoof_ids_title"
-            android:summary="@string/vkall_privacy_spoof_ids_summary"
-            android:key="vkall_privacy_spoof_ids"
-            android:defaultValue="true" />
-        <com.vk.prefui.views.MaterialSwitchPreference
-            android:layout="@layout/item_preference"
-            android:title="@string/vkall_privacy_empty_fp_title"
-            android:summary="@string/vkall_privacy_empty_fp_summary"
-            android:key="vkall_privacy_empty_fp"
-            android:defaultValue="true" />
-        <com.vk.prefui.views.MaterialSwitchPreference
-            android:layout="@layout/item_preference"
-            android:title="@string/vkall_privacy_block_contacts_title"
-            android:summary="@string/vkall_privacy_block_contacts_summary"
-            android:key="vkall_privacy_block_contacts"
-            android:defaultValue="true" />
-        <Preference
-            android:layout="@layout/item_preference"
-            android:title="@string/vkall_privacy_vpn_note_title"
-            android:summary="@string/vkall_privacy_vpn_note_summary"
-            android:key="vkall_privacy_vpn_note"
-            android:selectable="false" />
+            android:entryValues="@array/vkall_privacy_profile_values"
+            android:icon="@drawable/vk_icon_phone_outline_28" />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/vkall_privacy_category_ids"
         android:key="vkall_privacy_cat_ids"
         app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_privacy_spoof_ids_title"
+            android:summary="@string/vkall_privacy_spoof_ids_summary"
+            android:key="vkall_privacy_spoof_ids"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_key_outline_28" />
         <Preference
             android:layout="@layout/item_preference"
             android:title="@string/vkall_privacy_ids_title"
             android:key="vkall_privacy_ids"
-            android:selectable="false" />
+            android:selectable="false"
+            android:icon="@drawable/vk_icon_info_outline_28" />
         <Preference
             android:layout="@layout/item_preference"
             android:title="@string/vkall_privacy_reset_title"
             android:summary="@string/vkall_privacy_reset_summary"
-            android:key="vkall_privacy_reset" />
+            android:key="vkall_privacy_reset"
+            android:icon="@drawable/vk_icon_refresh_outline_28" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/vkall_privacy_category_extra"
+        android:key="vkall_privacy_cat_extra"
+        app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_privacy_empty_fp_title"
+            android:summary="@string/vkall_privacy_empty_fp_summary"
+            android:key="vkall_privacy_empty_fp"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_hide_outline_28" />
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_privacy_block_contacts_title"
+            android:summary="@string/vkall_privacy_block_contacts_summary"
+            android:key="vkall_privacy_block_contacts"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_user_outline_28" />
+        <Preference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_privacy_vpn_note_title"
+            android:summary="@string/vkall_privacy_vpn_note_summary"
+            android:key="vkall_privacy_vpn_note"
+            android:selectable="false"
+            android:icon="@drawable/vk_icon_globe_outline_28" />
     </PreferenceCategory>
 </PreferenceScreen>

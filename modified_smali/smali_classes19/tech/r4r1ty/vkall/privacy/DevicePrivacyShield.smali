@@ -22,38 +22,46 @@
 
 .field public static final PROFILE_PIXEL10:Ljava/lang/String; = "pixel10"
 
+.field public static final PROFILE_PIXEL7:Ljava/lang/String; = "pixel7"
+
+.field public static final PROFILE_PIXEL7_PRO:Ljava/lang/String; = "pixel7pro"
+
 .field public static final PROFILE_PIXEL8:Ljava/lang/String; = "pixel8"
 
+.field public static final PROFILE_PIXEL8_PRO:Ljava/lang/String; = "pixel8pro"
+
 .field public static final PROFILE_PIXEL9:Ljava/lang/String; = "pixel9"
+
+.field public static final PROFILE_PIXEL9_PRO:Ljava/lang/String; = "pixel9pro"
 
 
 # direct methods
 .method private constructor <init>()V
     .registers 1
 
-    .line 29
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
+    .line 33
     return-void
 .end method
 
 .method public static androidId()Ljava/lang/String;
     .registers 1
 
-    .line 184
+    .line 192
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofIdsEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 185
+    .line 193
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 187
+    .line 195
     :cond_8
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureAndroidId()Ljava/lang/String;
 
@@ -65,7 +73,7 @@
 .method private static app()Landroid/content/Context;
     .registers 5
 
-    .line 34
+    .line 37
     const/4 v0, 0x0
 
     :try_start_1
@@ -75,7 +83,7 @@
 
     move-result-object v1
 
-    .line 35
+    .line 38
     const-string v2, "currentApplication"
 
     const/4 v3, 0x0
@@ -92,12 +100,12 @@
 
     move-result-object v1
 
-    .line 36
+    .line 39
     instance-of v2, v1, Landroid/content/Context;
 
     if-eqz v2, :cond_21
 
-    .line 37
+    .line 40
     check-cast v1, Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -108,15 +116,15 @@
 
     return-object v0
 
-    .line 40
+    .line 43
     :cond_21
     goto :goto_23
 
-    .line 39
+    .line 42
     :catchall_22
     move-exception v1
 
-    .line 41
+    .line 44
     :goto_23
     return-object v0
 .end method
@@ -124,7 +132,7 @@
 .method public static blockContacts()Z
     .registers 2
 
-    .line 82
+    .line 85
     const-string v0, "vkall_privacy_block_contacts"
 
     const/4 v1, 0x1
@@ -139,7 +147,7 @@
 .method public static board()Ljava/lang/String;
     .registers 1
 
-    .line 249
+    .line 274
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->device()Ljava/lang/String;
 
     move-result-object v0
@@ -150,19 +158,19 @@
 .method public static brand()Ljava/lang/String;
     .registers 1
 
-    .line 238
+    .line 263
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 239
+    .line 264
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 241
+    .line 266
     :cond_8
     const-string v0, "google"
 
@@ -172,7 +180,7 @@
 .method private static buildFingerprintString()Ljava/lang/String;
     .registers 9
 
-    .line 274
+    .line 305
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->product()Ljava/lang/String;
 
     move-result-object v0
@@ -197,7 +205,7 @@
 
     move-result-object v5
 
-    .line 275
+    .line 306
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->manufacturer()Ljava/lang/String;
 
     move-result-object v6
@@ -252,26 +260,26 @@
 
     move-result-object v0
 
-    .line 274
+    .line 305
     return-object v0
 .end method
 
 .method public static buildHash()Ljava/lang/String;
     .registers 1
 
-    .line 176
+    .line 185
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 177
+    .line 186
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 179
+    .line 188
     :cond_8
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->buildFingerprintString()Ljava/lang/String;
 
@@ -287,76 +295,211 @@
 .method public static device()Ljava/lang/String;
     .registers 2
 
-    .line 224
+    .line 240
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 225
+    .line 241
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 227
+    .line 243
     :cond_8
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->profileId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 228
-    const-string v1, "pixel8"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    sparse-switch v1, :sswitch_data_74
 
-    .line 229
-    const-string v0, "shiba"
+    :cond_13
+    goto :goto_5a
 
-    return-object v0
+    :sswitch_14
+    const-string v1, "pixel9pro"
 
-    .line 231
-    :cond_17
-    const-string v1, "pixel10"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_13
 
-    .line 232
+    const/4 v0, 0x4
+
+    goto :goto_5b
+
+    :sswitch_1e
+    const-string v1, "pixel8pro"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x3
+
+    goto :goto_5b
+
+    :sswitch_28
+    const-string v1, "pixel7pro"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x1
+
+    goto :goto_5b
+
+    :sswitch_32
+    const-string v1, "pixel10"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x5
+
+    goto :goto_5b
+
+    :sswitch_3c
+    const-string v1, "pixel9"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x6
+
+    goto :goto_5b
+
+    :sswitch_46
+    const-string v1, "pixel8"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x2
+
+    goto :goto_5b
+
+    :sswitch_50
+    const-string v1, "pixel7"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x0
+
+    goto :goto_5b
+
+    :goto_5a
+    const/4 v0, -0x1
+
+    :goto_5b
+    packed-switch v0, :pswitch_data_92
+
+    .line 258
+    const-string v0, "tokay"
+
+    return-object v0
+
+    .line 255
+    :pswitch_61
     const-string v0, "mustang"
 
     return-object v0
 
-    .line 234
-    :cond_22
-    const-string v0, "tokay"
+    .line 253
+    :pswitch_64
+    const-string v0, "caiman"
 
     return-object v0
+
+    .line 251
+    :pswitch_67
+    const-string v0, "husky"
+
+    return-object v0
+
+    .line 249
+    :pswitch_6a
+    const-string v0, "shiba"
+
+    return-object v0
+
+    .line 247
+    :pswitch_6d
+    const-string v0, "cheetah"
+
+    return-object v0
+
+    .line 245
+    :pswitch_70
+    const-string v0, "panther"
+
+    return-object v0
+
+    nop
+
+    :sswitch_data_74
+    .sparse-switch
+        -0x3ae1818f -> :sswitch_50
+        -0x3ae1818e -> :sswitch_46
+        -0x3ae1818d -> :sswitch_3c
+        -0x214eb0db -> :sswitch_32
+        -0x8622d64 -> :sswitch_28
+        -0x861b905 -> :sswitch_1e
+        -0x86144a6 -> :sswitch_14
+    .end sparse-switch
+
+    :pswitch_data_92
+    .packed-switch 0x0
+        :pswitch_70
+        :pswitch_6d
+        :pswitch_6a
+        :pswitch_67
+        :pswitch_64
+        :pswitch_61
+    .end packed-switch
 .end method
 
 .method public static deviceId()Ljava/lang/String;
     .registers 1
 
-    .line 168
+    .line 178
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofIdsEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 169
+    .line 179
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 171
+    .line 181
     :cond_8
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureDeviceId()Ljava/lang/String;
 
@@ -368,7 +511,7 @@
 .method public static emptyAdFingerprint()Z
     .registers 2
 
-    .line 78
+    .line 81
     const-string v0, "vkall_privacy_empty_fp"
 
     const/4 v1, 0x1
@@ -383,20 +526,20 @@
 .method private static ensureAndroidId()Ljava/lang/String;
     .registers 6
 
-    .line 108
+    .line 119
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 109
+    .line 120
     if-nez v0, :cond_9
 
-    .line 110
+    .line 121
     const-string v0, "a1b2c3d4e5f67890"
 
     return-object v0
 
-    .line 112
+    .line 123
     :cond_9
     const/4 v1, 0x0
 
@@ -406,7 +549,7 @@
 
     move-result-object v1
 
-    .line 113
+    .line 124
     const/16 v3, 0x10
 
     if-eqz v1, :cond_1b
@@ -417,10 +560,10 @@
 
     if-ne v4, v3, :cond_1b
 
-    .line 114
+    .line 125
     return-object v1
 
-    .line 116
+    .line 127
     :cond_1b
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
@@ -444,7 +587,7 @@
 
     move-result-object v1
 
-    .line 117
+    .line 128
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -455,24 +598,24 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 118
+    .line 129
     return-object v1
 .end method
 
 .method private static ensureDeviceId()Ljava/lang/String;
     .registers 7
 
-    .line 136
+    .line 147
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 137
+    .line 148
     const-string v1, ":"
 
     if-nez v0, :cond_2a
 
-    .line 138
+    .line 149
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureAndroidId()Ljava/lang/String;
 
     move-result-object v0
@@ -507,7 +650,7 @@
 
     return-object v0
 
-    .line 140
+    .line 151
     :cond_2a
     const/4 v2, 0x0
 
@@ -517,7 +660,7 @@
 
     move-result-object v2
 
-    .line 141
+    .line 152
     if-eqz v2, :cond_3a
 
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
@@ -526,10 +669,10 @@
 
     if-nez v4, :cond_3a
 
-    .line 142
+    .line 153
     return-object v2
 
-    .line 144
+    .line 155
     :cond_3a
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureAndroidId()Ljava/lang/String;
 
@@ -583,7 +726,7 @@
 
     move-result-object v1
 
-    .line 145
+    .line 156
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -594,27 +737,27 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 146
+    .line 157
     return-object v1
 .end method
 
 .method private static ensureGaid()Ljava/lang/String;
     .registers 5
 
-    .line 122
+    .line 133
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 123
+    .line 134
     if-nez v0, :cond_9
 
-    .line 124
+    .line 135
     const-string v0, "00000000-0000-4000-8000-000000000001"
 
     return-object v0
 
-    .line 126
+    .line 137
     :cond_9
     const/4 v1, 0x0
 
@@ -624,7 +767,7 @@
 
     move-result-object v1
 
-    .line 127
+    .line 138
     if-eqz v1, :cond_1b
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -635,10 +778,10 @@
 
     if-lt v3, v4, :cond_1b
 
-    .line 128
+    .line 139
     return-object v1
 
-    .line 130
+    .line 141
     :cond_1b
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
@@ -648,7 +791,7 @@
 
     move-result-object v1
 
-    .line 131
+    .line 142
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -659,83 +802,282 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 132
+    .line 143
     return-object v1
 .end method
 
 .method public static fingerprint()Ljava/lang/String;
-    .registers 2
+    .registers 4
 
-    .line 260
+    .line 285
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 261
+    .line 286
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 263
+    .line 288
     :cond_8
-    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->profileId()Ljava/lang/String;
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->device()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 264
-    const-string v1, "pixel8"
+    .line 289
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->profileId()Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    sparse-switch v2, :sswitch_data_c6
+
+    :cond_17
+    goto :goto_5e
+
+    :sswitch_18
+    const-string v2, "pixel9pro"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_17
 
-    .line 265
-    const-string v0, "google/shiba/shiba:15/AP4A.250205.002/12851432:user/release-keys"
+    const/4 v1, 0x6
+
+    goto :goto_5f
+
+    :sswitch_22
+    const-string v2, "pixel8pro"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    const/4 v1, 0x4
+
+    goto :goto_5f
+
+    :sswitch_2c
+    const-string v2, "pixel7pro"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    const/4 v1, 0x1
+
+    goto :goto_5f
+
+    :sswitch_36
+    const-string v2, "pixel10"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    const/4 v1, 0x2
+
+    goto :goto_5f
+
+    :sswitch_40
+    const-string v2, "pixel9"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    const/4 v1, 0x5
+
+    goto :goto_5f
+
+    :sswitch_4a
+    const-string v2, "pixel8"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    const/4 v1, 0x3
+
+    goto :goto_5f
+
+    :sswitch_54
+    const-string v2, "pixel7"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    const/4 v1, 0x0
+
+    goto :goto_5f
+
+    :goto_5e
+    const/4 v1, -0x1
+
+    :goto_5f
+    const-string v2, "/"
+
+    const-string v3, "google/"
+
+    packed-switch v1, :pswitch_data_e4
+
+    .line 300
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ":15/AP4A.250205.002/12851432:user/release-keys"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 
-    .line 267
-    :cond_17
-    const-string v1, "pixel10"
+    .line 294
+    :pswitch_86
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v0
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_22
+    move-result-object v1
 
-    .line 268
-    const-string v0, "google/mustang/mustang:16/BP2A.250605.001/14000000:user/release-keys"
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ":16/BP2A.250605.001/14000000:user/release-keys"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 
-    .line 270
-    :cond_22
-    const-string v0, "google/tokay/tokay:15/AP4A.250205.002/12851432:user/release-keys"
+    .line 292
+    :pswitch_a6
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ":14/AP2A.240805.005/12025110:user/release-keys"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
+
+    :sswitch_data_c6
+    .sparse-switch
+        -0x3ae1818f -> :sswitch_54
+        -0x3ae1818e -> :sswitch_4a
+        -0x3ae1818d -> :sswitch_40
+        -0x214eb0db -> :sswitch_36
+        -0x8622d64 -> :sswitch_2c
+        -0x861b905 -> :sswitch_22
+        -0x86144a6 -> :sswitch_18
+    .end sparse-switch
+
+    :pswitch_data_e4
+    .packed-switch 0x0
+        :pswitch_a6
+        :pswitch_a6
+        :pswitch_86
+    .end packed-switch
 .end method
 
 .method public static gaid()Ljava/lang/String;
     .registers 1
 
-    .line 192
+    .line 199
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofIdsEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 193
+    .line 200
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 195
+    .line 202
     :cond_8
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureGaid()Ljava/lang/String;
 
@@ -747,7 +1089,7 @@
 .method public static gaidLimitTracking()Z
     .registers 1
 
-    .line 199
+    .line 206
     const/4 v0, 0x1
 
     return v0
@@ -756,19 +1098,19 @@
 .method public static hardware()Ljava/lang/String;
     .registers 1
 
-    .line 253
+    .line 278
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 254
+    .line 279
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 256
+    .line 281
     :cond_8
     const-string v0, "qcom"
 
@@ -778,30 +1120,28 @@
 .method public static idsSummary()Ljava/lang/String;
     .registers 4
 
-    .line 279
+    .line 310
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofIdsEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    .line 280
+    .line 311
     const-string v0, "\u0421\u043f\u0443\u0444 ID \u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d"
 
     return-object v0
 
-    .line 282
+    .line 313
     :cond_9
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureAndroidId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 283
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->ensureGaid()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 284
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -836,19 +1176,19 @@
 .method public static manufacturer()Ljava/lang/String;
     .registers 1
 
-    .line 203
+    .line 210
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 204
+    .line 211
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 206
+    .line 213
     :cond_8
     const-string v0, "Google"
 
@@ -858,7 +1198,7 @@
 .method private static md5Hex(Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
-    .line 151
+    .line 162
     :try_start_0
     const-string v0, "MD5"
 
@@ -876,7 +1216,7 @@
 
     move-result-object p0
 
-    .line 152
+    .line 163
     new-instance v0, Ljava/lang/StringBuilder;
 
     array-length v1, p0
@@ -885,7 +1225,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 153
+    .line 164
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -895,20 +1235,20 @@
 
     aget-byte v3, p0, v2
 
-    .line 154
+    .line 165
     and-int/lit16 v3, v3, 0xff
 
-    .line 155
+    .line 166
     const/16 v4, 0x10
 
     if-ge v3, v4, :cond_29
 
-    .line 156
+    .line 167
     const/16 v4, 0x30
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 158
+    .line 169
     :cond_29
     invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
@@ -916,12 +1256,12 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 153
+    .line 164
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1a
 
-    .line 160
+    .line 171
     :cond_33
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -931,11 +1271,11 @@
 
     return-object p0
 
-    .line 161
+    .line 172
     :catchall_38
     move-exception p0
 
-    .line 162
+    .line 173
     const-string p0, "00000000000000000000000000000000"
 
     return-object p0
@@ -944,75 +1284,210 @@
 .method public static model()Ljava/lang/String;
     .registers 2
 
-    .line 210
+    .line 217
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_8
 
-    .line 211
+    .line 218
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 213
+    .line 220
     :cond_8
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->profileId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 214
-    const-string v1, "pixel8"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    sparse-switch v1, :sswitch_data_74
 
-    .line 215
-    const-string v0, "Pixel 8"
+    :cond_13
+    goto :goto_5a
 
-    return-object v0
+    :sswitch_14
+    const-string v1, "pixel9pro"
 
-    .line 217
-    :cond_17
-    const-string v1, "pixel10"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_13
 
-    .line 218
+    const/4 v0, 0x4
+
+    goto :goto_5b
+
+    :sswitch_1e
+    const-string v1, "pixel8pro"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x3
+
+    goto :goto_5b
+
+    :sswitch_28
+    const-string v1, "pixel7pro"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x1
+
+    goto :goto_5b
+
+    :sswitch_32
+    const-string v1, "pixel10"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x5
+
+    goto :goto_5b
+
+    :sswitch_3c
+    const-string v1, "pixel9"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x6
+
+    goto :goto_5b
+
+    :sswitch_46
+    const-string v1, "pixel8"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x2
+
+    goto :goto_5b
+
+    :sswitch_50
+    const-string v1, "pixel7"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const/4 v0, 0x0
+
+    goto :goto_5b
+
+    :goto_5a
+    const/4 v0, -0x1
+
+    :goto_5b
+    packed-switch v0, :pswitch_data_92
+
+    .line 235
+    const-string v0, "Pixel 9"
+
+    return-object v0
+
+    .line 232
+    :pswitch_61
     const-string v0, "Pixel 10"
 
     return-object v0
 
-    .line 220
-    :cond_22
-    const-string v0, "Pixel 9"
+    .line 230
+    :pswitch_64
+    const-string v0, "Pixel 9 Pro"
 
     return-object v0
+
+    .line 228
+    :pswitch_67
+    const-string v0, "Pixel 8 Pro"
+
+    return-object v0
+
+    .line 226
+    :pswitch_6a
+    const-string v0, "Pixel 8"
+
+    return-object v0
+
+    .line 224
+    :pswitch_6d
+    const-string v0, "Pixel 7 Pro"
+
+    return-object v0
+
+    .line 222
+    :pswitch_70
+    const-string v0, "Pixel 7"
+
+    return-object v0
+
+    nop
+
+    :sswitch_data_74
+    .sparse-switch
+        -0x3ae1818f -> :sswitch_50
+        -0x3ae1818e -> :sswitch_46
+        -0x3ae1818d -> :sswitch_3c
+        -0x214eb0db -> :sswitch_32
+        -0x8622d64 -> :sswitch_28
+        -0x861b905 -> :sswitch_1e
+        -0x86144a6 -> :sswitch_14
+    .end sparse-switch
+
+    :pswitch_data_92
+    .packed-switch 0x0
+        :pswitch_70
+        :pswitch_6d
+        :pswitch_6a
+        :pswitch_67
+        :pswitch_64
+        :pswitch_61
+    .end packed-switch
 .end method
 
 .method private static pref(Ljava/lang/String;Z)Z
     .registers 3
 
-    .line 53
+    .line 56
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 54
+    .line 57
     if-nez v0, :cond_7
 
-    .line 55
+    .line 58
     return p1
 
-    .line 57
+    .line 60
     :cond_7
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -1024,24 +1499,24 @@
 .method private static prefString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 3
 
-    .line 61
+    .line 64
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 62
+    .line 65
     if-nez v0, :cond_7
 
-    .line 63
+    .line 66
     return-object p1
 
-    .line 65
+    .line 68
     :cond_7
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 66
+    .line 69
     if-eqz p0, :cond_e
 
     move-object p1, p0
@@ -1053,20 +1528,20 @@
 .method private static prefs()Landroid/content/SharedPreferences;
     .registers 3
 
-    .line 45
+    .line 48
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->app()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 46
+    .line 49
     if-nez v0, :cond_8
 
-    .line 47
+    .line 50
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 49
+    .line 52
     :cond_8
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -1102,7 +1577,7 @@
 .method public static product()Ljava/lang/String;
     .registers 1
 
-    .line 245
+    .line 270
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->device()Ljava/lang/String;
 
     move-result-object v0
@@ -1113,7 +1588,7 @@
 .method public static profileId()Ljava/lang/String;
     .registers 2
 
-    .line 86
+    .line 89
     const-string v0, "vkall_privacy_profile"
 
     const-string v1, "pixel9"
@@ -1125,47 +1600,89 @@
     return-object v0
 .end method
 
+.method public static profileLabel()Ljava/lang/String;
+    .registers 3
+
+    .line 101
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    .line 102
+    const-string v0, "\u0421\u043f\u0443\u0444 \u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d"
+
+    return-object v0
+
+    .line 104
+    :cond_9
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->model()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Google "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static resetIds()V
     .registers 2
 
-    .line 97
+    .line 108
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 98
+    .line 109
     if-eqz v0, :cond_1f
 
-    .line 99
+    .line 110
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 100
+    .line 111
     const-string v1, "vkall_privacy_android_id"
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 101
+    .line 112
     const-string v1, "vkall_privacy_gaid"
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 102
+    .line 113
     const-string v1, "vkall_privacy_device_id"
 
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 103
+    .line 114
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 105
+    .line 116
     :cond_1f
     return-void
 .end method
@@ -1173,17 +1690,17 @@
 .method public static setProfileId(Ljava/lang/String;)V
     .registers 3
 
-    .line 90
+    .line 93
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->prefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 91
+    .line 94
     if-eqz v0, :cond_15
 
     if-eqz p0, :cond_15
 
-    .line 92
+    .line 95
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -1196,7 +1713,7 @@
 
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 94
+    .line 97
     :cond_15
     return-void
 .end method
@@ -1204,7 +1721,7 @@
 .method public static spoofEnabled()Z
     .registers 2
 
-    .line 70
+    .line 73
     const-string v0, "vkall_privacy_spoof"
 
     const/4 v1, 0x1
@@ -1219,7 +1736,7 @@
 .method public static spoofIdsEnabled()Z
     .registers 2
 
-    .line 74
+    .line 77
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->spoofEnabled()Z
 
     move-result v0

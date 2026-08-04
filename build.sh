@@ -4,9 +4,9 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-VKALL_VERSION_NAME="${VKALL_VERSION_NAME:-0.0.1}"
-# Keep above stock VK (56120) so adb install -r does not hit VERSION_DOWNGRADE
-VKALL_VERSION_CODE="${VKALL_VERSION_CODE:-56121}"
+VKALL_VERSION_NAME="${VKALL_VERSION_NAME:-0.0.3}"
+# Keep above previous installs so adb install -r does not hit VERSION_DOWNGRADE
+VKALL_VERSION_CODE="${VKALL_VERSION_CODE:-56144}"
 OUT_NAME="VKall-${VKALL_VERSION_NAME}.apk"
 
 echo "=================================================="
@@ -129,10 +129,19 @@ entries = [
     ('string', 'vkall_privacy_reset_summary', '0x7f134ef0'),
     ('string', 'vkall_privacy_vpn_note_title', '0x7f134ef1'),
     ('string', 'vkall_privacy_vpn_note_summary', '0x7f134ef2'),
+    ('string', 'vkall_privacy_category_device', '0x7f134ef3'),
+    ('string', 'vkall_privacy_category_extra', '0x7f134ef4'),
+    ('string', 'vkall_privacy_profile_dialog', '0x7f134ef5'),
+    ('string', 'vkall_stories_disable_title', '0x7f134ef6'),
+    ('string', 'vkall_stories_disable_summary', '0x7f134ef7'),
+    ('string', 'vkall_appearance_title', '0x7f134ef8'),
+    ('string', 'vkall_appearance_summary', '0x7f134ef9'),
+    ('string', 'vkall_appearance_category_main', '0x7f134efa'),
     ('xml', 'vkall_mod_preferences', '0x7f17002b'),
     ('xml', 'vkall_encryption_preferences', '0x7f17002c'),
     ('xml', 'vkall_ads_preferences', '0x7f17002d'),
     ('xml', 'vkall_privacy_preferences', '0x7f17002e'),
+    ('xml', 'vkall_appearance_preferences', '0x7f17002f'),
 ]
 changed = False
 for typ, name, rid in entries:

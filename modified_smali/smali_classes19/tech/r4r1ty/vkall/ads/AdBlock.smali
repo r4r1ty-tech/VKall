@@ -310,13 +310,14 @@
     return p0
 
     :cond_0
+    # authors / friends / live
     const-string v0, "authors_rec"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_hit
 
     const-string v0, "inline_user_rec"
 
@@ -324,7 +325,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_hit
 
     const-string v0, "live_recommended"
 
@@ -332,7 +333,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_hit
 
     const-string v0, "user_rec"
 
@@ -340,7 +341,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_hit
 
     const-string v0, "friends_recomm"
 
@@ -348,36 +349,114 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_hit
 
+    const-string v0, "recommendation_type"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    # «Вам рекомендуем» / digests / discover / interests
+    const-string v0, "digest"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    const-string v0, "discover_media_block"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    const-string v0, "interests"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    const-string v0, "games_carousel"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    const-string v0, "mini_apps_carousel"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    const-string v0, "liked_by_friends_groups"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    const-string v0, "holiday_friends"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    # recommended_* (groups, playlists, channels, …)
     const-string v0, "recommended_"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_hit
 
-    goto :goto_0
+    # VK Video / music «для вас»: videos_for_you, *_for_you_block
+    const-string v0, "_for_you"
 
-    :cond_1
-    const-string v0, "recommendation_type"
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result p0
+    if-nez v0, :cond_hit
 
-    if-eqz p0, :cond_2
+    # clips blocks in feed
+    const-string v0, "clips_"
 
-    goto :goto_0
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    :cond_2
+    move-result v0
+
+    if-nez v0, :cond_hit
+
+    # Дзен inserts
+    const-string v0, "dzen_"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_hit
+
     const/4 p0, 0x0
 
     return p0
 
-    :cond_3
-    :goto_0
+    :cond_hit
     const/4 p0, 0x1
 
     return p0
@@ -438,6 +517,17 @@
     return v0
 
     :cond_0
+    invoke-static {p0}, Ltech/r4r1ty/vkall/stories/StoriesBlock;->shouldKeep(Lorg/json/JSONObject;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_stories_ok
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_stories_ok
     invoke-static {}, Ltech/r4r1ty/vkall/ads/AdBlock;->enabled()Z
 
     move-result v1

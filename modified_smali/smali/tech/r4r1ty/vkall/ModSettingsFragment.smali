@@ -12,6 +12,29 @@
     return-void
 .end method
 
+.method private a()V
+    .locals 2
+
+    const-string v0, "vkall_privacy"
+
+    invoke-virtual {p0, v0}, Lcom/vk/prefui/fragments/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->profileLabel()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroidx/preference/Preference;->I(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public final ho()I
@@ -76,5 +99,32 @@
     iput-object v0, p1, Landroidx/preference/Preference;->g:Landroidx/preference/Preference$c;
 
     :cond_2
+    const-string p1, "vkall_appearance"
+
+    invoke-virtual {p0, p1}, Lcom/vk/prefui/fragments/PreferenceFragmentCompat;->findPreference(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    new-instance v0, Ltech/r4r1ty/vkall/ModSettingsFragment$d;
+
+    invoke-direct {v0, p0}, Ltech/r4r1ty/vkall/ModSettingsFragment$d;-><init>(Ltech/r4r1ty/vkall/ModSettingsFragment;)V
+
+    iput-object v0, p1, Landroidx/preference/Preference;->g:Landroidx/preference/Preference$c;
+
+    :cond_3
+    invoke-direct {p0}, Ltech/r4r1ty/vkall/ModSettingsFragment;->a()V
+
+    return-void
+.end method
+
+.method public final onResume()V
+    .locals 0
+
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onResume()V
+
+    invoke-direct {p0}, Ltech/r4r1ty/vkall/ModSettingsFragment;->a()V
+
     return-void
 .end method

@@ -23,7 +23,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->idsSummary()Ljava/lang/String;
@@ -32,6 +32,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/preference/Preference;->I(Ljava/lang/CharSequence;)V
 
+    :goto_0
     return-void
 .end method
 
@@ -79,5 +80,15 @@
     iput-object v0, p1, Landroidx/preference/Preference;->g:Landroidx/preference/Preference$c;
 
     :cond_0
+    return-void
+.end method
+
+.method public final onResume()V
+    .locals 0
+
+    invoke-super {p0}, Landroidx/fragment/app/Fragment;->onResume()V
+
+    invoke-direct {p0}, Ltech/r4r1ty/vkall/PrivacySettingsFragment;->a()V
+
     return-void
 .end method

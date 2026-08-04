@@ -1,0 +1,8 @@
+# Remap AI bot identities (still reachable via refs/pull/*/head) to the real author.
+r4r1ty <6alexam@gmail.com> copilot-swe-agent[bot] <198982749+Copilot@users.noreply.github.com>
+r4r1ty <6alexam@gmail.com> Copilot <198982749+Copilot@users.noreply.github.com>
+r4r1ty <6alexam@gmail.com> <198982749+Copilot@users.noreply.github.com>
+r4r1ty <6alexam@gmail.com> Cursor <cursoragent@cursor.com>
+r4r1ty <6alexam@gmail.com> cursoragent <cursoragent@cursor.com>
+r4r1ty <6alexam@gmail.com> <cursoragent@cursor.com>
+r4r1ty <6alexam@gmail.com> Cursor Agent <cursoragent@cursor.com>

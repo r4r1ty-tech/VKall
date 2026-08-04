@@ -20,8 +20,10 @@
 .method public final declared-synchronized g(Landroid/content/Context;)Ljava/util/Map;
     .locals 1
 
-    # VKall Pass4 stub
-    const/4 v0, 0x0
+    # VKall: empty map (not null — avoids NPE in gpy0.putAll)
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     return-object v0
 .end method

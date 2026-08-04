@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vkall_encrypt_enable">Включить шифрование</string>
+    <string name="vkall_encrypt_disable">Выключить шифрование</string>
+    <string name="vkall_mod_settings_title">Настройки мода</string>
+    <string name="vkall_encryption_title">Шифрование</string>
+    <string name="vkall_encryption_summary">Чаты · AES-256-GCM · как iziVK</string>
+    <string name="vkall_encryption_how_title">Как включить</string>
+    <string name="vkall_encryption_how_summary">Зажмите диалог в списке чатов и выберите «Включить шифрование». У собеседника тоже должен быть VKall или iziVK.</string>
+    <string name="vkall_encryption_compat_title">Ключ</string>
+    <string name="vkall_encryption_compat_summary">Генерируется автоматически (как в iziVK). Пароль не нужен. Вложения VK не шифруются.</string>
+    <string name="vkall_ads_title">Блокировка рекламы</string>
+    <string name="vkall_ads_summary">Лента · сторис · рекомендации</string>
+    <string name="vkall_ads_category_main">Общее</string>
+    <string name="vkall_ads_category_feed">Лента и посты</string>
+    <string name="vkall_ads_category_stories">Истории</string>
+    <string name="vkall_ads_category_messenger">Мессенджер</string>
+    <string name="vkall_ads_master_title">Включить блокировку</string>
+    <string name="vkall_ads_master_summary">Главный переключатель всех фильтров рекламы</string>
+    <string name="vkall_ads_types_title">Рекламные блоки</string>
+    <string name="vkall_ads_types_summary">ads, carousel, html5_ad и похожие типы</string>
+    <string name="vkall_ads_marked_title">Посты с меткой рекламы</string>
+    <string name="vkall_ads_marked_summary">Скрывать записи с marked_as_ads</string>
+    <string name="vkall_ads_promo_title">Промо и виджеты</string>
+    <string name="vkall_ads_promo_summary">promo_button, app_widget, videos_promo</string>
+    <string name="vkall_ads_recs_title">Рекомендации</string>
+    <string name="vkall_ads_recs_summary">Авторы, друзья, inline-рекомендации</string>
+    <string name="vkall_ads_stories_title">Реклама в историях</string>
+    <string name="vkall_ads_stories_summary">Убирать рекламные вставки между сторис</string>
+    <string name="vkall_ads_messenger_title">Баннер в списке чатов</string>
+    <string name="vkall_ads_messenger_summary">Блок «Реклама · 0+» (AppLovin MAX) над диалогами</string>
+    <string name="vkall_privacy_title">Приватность</string>
+    <string name="vkall_privacy_summary">Спуф устройства · ID · контакты</string>
+    <string name="vkall_privacy_category_main">Устройство</string>
+    <string name="vkall_privacy_spoof_title">Спуфить устройство</string>
+    <string name="vkall_privacy_spoof_summary">Подменять модель и производитель (Pixel)</string>
+    <string name="vkall_privacy_profile_title">Модель</string>
+    <string name="vkall_privacy_profile_summary">Какой Pixel показывать серверам</string>
+    <string name="vkall_privacy_spoof_ids_title">Спуф ID</string>
+    <string name="vkall_privacy_spoof_ids_summary">Стабильные fake android_id и GAID (нужны для SMS)</string>
+    <string name="vkall_privacy_empty_fp_title">Пустой fingerprint рекламы</string>
+    <string name="vkall_privacy_empty_fp_summary">Не отдавать env-данные в MyTarget</string>
+    <string name="vkall_privacy_block_contacts_title">Не синхронизировать контакты</string>
+    <string name="vkall_privacy_block_contacts_summary">Блокировать загрузку адресной книги на сервер</string>
+    <string name="vkall_privacy_category_ids">Идентификаторы</string>
+    <string name="vkall_privacy_ids_title">Текущие fake ID</string>
+    <string name="vkall_privacy_reset_title">Сбросить fake ID</string>
+    <string name="vkall_privacy_reset_summary">Новые ID при следующем запуске. Пуши могут сброситься.</string>
+    <string name="vkall_privacy_vpn_note_title">VPN</string>
+    <string name="vkall_privacy_vpn_note_summary">Флаг VPN уже скрыт от VK и libverify</string>
+    <string-array name="vkall_privacy_profile_entries">
+        <item>Google Pixel 8</item>
+        <item>Google Pixel 9</item>
+        <item>Google Pixel 10</item>
+    </string-array>
+    <string-array name="vkall_privacy_profile_values">
+        <item>pixel8</item>
+        <item>pixel9</item>
+        <item>pixel10</item>
+    </string-array>
+</resources>

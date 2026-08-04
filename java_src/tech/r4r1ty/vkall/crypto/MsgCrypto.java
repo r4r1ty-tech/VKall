@@ -1,19 +1,17 @@
 package tech.r4r1ty.vkall.crypto;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * High-level IM crypto hooks for VKall.
- * Один алгоритм (AES-256-GCM), один мастер-тумблер.
- * Prefs {@code vkall_im_crypto}: {@code master_enabled}, {@code password}.
+ * IM crypto hooks for VKall — toggle-only like iziVK.
+ * Prefs {@code vkall_im_crypto}: {@code enc_<peerId>}.
+ * Key is always {@code VTAesDefault} (iziVK-compatible), no password UI.
  */
 public final class MsgCrypto {
 
     private static final String PREFS = "vkall_im_crypto";
-    private static final String KEY_MASTER = "master_enabled";
-    private static final String KEY_PASSWORD = "password";
+    private static final String DEFAULT_KEY = "VTAesDefault";
 
     private MsgCrypto() {
     }
@@ -38,104 +36,72 @@ public final class MsgCrypto {
         return ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
     }
 
-    public static boolean isMasterEnabled() {
-        SharedPreferences p = prefs();
-        return p != null && p.getBoolean(KEY_MASTER, false);
-    }
-
-    public static void setMasterEnabled(boolean enabled) {
-        SharedPreferences p = prefs();
-        if (p != null) {
-            p.edit().putBoolean(KEY_MASTER, enabled).apply();
-        }
-    }
-
+    /** @deprecated no password UI; always VTAesDefault */
     public static String getPassword() {
+        return DEFAULT_KEY;
+    }
+
+    /** @deprecated ignored — key is fixed like iziVK */
+    public static void setPassword(String password) {
+        // no-op: iziVK-compatible shared default key
+    }
+
+    public static boolean isEnabledForPeer(int peerId) {
         SharedPreferences p = prefs();
         if (p == null) {
-            return "VTAesDefault";
+            return false;
         }
-        String pwd = p.getString(KEY_PASSWORD, "VTAesDefault");
-        return (pwd == null || pwd.isEmpty()) ? "VTAesDefault" : pwd;
+        return p.getBoolean("enc_" + peerId, false);
     }
 
-    public static void setPassword(String password) {
+    public static void setEnabledForPeer(int peerId, boolean enabled) {
         SharedPreferences p = prefs();
         if (p != null) {
-            String pwd = (password == null || password.isEmpty()) ? "VTAesDefault" : password;
-            p.edit().putString(KEY_PASSWORD, pwd).apply();
+            p.edit().putBoolean("enc_" + peerId, enabled).apply();
         }
-    }
-
-    /** Per-peer API kept for hooks; always follows master switch. */
-    public static boolean isEnabledForPeer(int peerId) {
-        return isMasterEnabled();
     }
 
     private static String passphrase() {
-        return CryptoManager.passphraseFromUserKey(getPassword());
+        return CryptoManager.passphraseFromUserKey(DEFAULT_KEY);
     }
 
-    /** Encrypt outgoing body if peer has encryption enabled. */
     public static String encryptOutgoing(String body, int peerId) {
-        if (body == null || body.isEmpty()) {
+        if (body == null || body.isEmpty() || !isEnabledForPeer(peerId)) {
             return body;
         }
-        if (CryptoManager.isEncrypted(body)) {
+        if (body.startsWith("[ENC]")) {
             return body;
         }
-        if (!isEnabledForPeer(peerId)) {
+        try {
+            return CryptoManager.encrypt(body, passphrase());
+        } catch (Throwable t) {
             return body;
         }
-        return CryptoManager.encrypt(body, passphrase());
     }
 
-    /** Encrypt using Peer.b (dialogId as long). */
-    public static String encryptOutgoingPeer(Object peer, String body) {
-        int peerId = peerIdOf(peer);
+    public static String encryptOutgoingPeer(com.vk.dto.common.Peer peer, String body) {
+        int peerId = 0;
+        if (peer != null) {
+            peerId = (int) peer.b;
+        }
         return encryptOutgoing(body, peerId);
     }
 
-    public static int peerIdOf(Object peer) {
-        if (peer == null) {
-            return 0;
+    public static String decryptIncoming(String body) {
+        if (body == null || !body.startsWith("[ENC]")) {
+            return body;
         }
         try {
-            // com.vk.dto.common.Peer.b : J (dialogId)
-            java.lang.reflect.Field f = peer.getClass().getDeclaredField("b");
-            f.setAccessible(true);
-            Object v = f.get(peer);
-            if (v instanceof Long) {
-                long id = (Long) v;
-                return (int) id;
+            String plain = CryptoManager.decrypt(body, passphrase());
+            if (plain == null || plain.equals(body)) {
+                return body;
             }
-            if (v instanceof Integer) {
-                return (Integer) v;
+            if (plain.contains("\uD83D\uDD12")) {
+                return plain;
             }
-        } catch (Throwable ignored) {
-        }
-        return 0;
-    }
-
-    /** Decrypt for display; adds lock prefix when decrypted. */
-    public static String decryptIncoming(String body, int peerId) {
-        if (!CryptoManager.isEncrypted(body)) {
+            return "\uD83D\uDD12 " + plain;
+        } catch (Throwable t) {
             return body;
         }
-        String plain = CryptoManager.decrypt(body, passphrase());
-        if (plain == null) {
-            return body;
-        }
-        if (plain.startsWith("\uD83D\uDD12")) {
-            return plain;
-        }
-        if (CryptoManager.isEncrypted(plain)) {
-            return plain;
-        }
-        // successfully decrypted
-        if (plain.equals(body)) {
-            return body;
-        }
-        return "\uD83D\uDD12 " + plain;
     }
 }

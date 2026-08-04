@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:title="@string/vkall_ads_category_main"
+        android:key="vkall_ads_cat_main"
+        app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_master_title"
+            android:summary="@string/vkall_ads_master_summary"
+            android:key="vkall_ads_master"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_block_outline_28" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/vkall_ads_category_feed"
+        android:key="vkall_ads_cat_feed"
+        app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_types_title"
+            android:summary="@string/vkall_ads_types_summary"
+            android:key="vkall_ads_types"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_advertising_outline_28" />
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_marked_title"
+            android:summary="@string/vkall_ads_marked_summary"
+            android:key="vkall_ads_marked"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_advertising_outline_28" />
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_promo_title"
+            android:summary="@string/vkall_ads_promo_summary"
+            android:key="vkall_ads_promo"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_advertising_outline_28" />
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_recs_title"
+            android:summary="@string/vkall_ads_recs_summary"
+            android:key="vkall_ads_recs"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_advertising_outline_28" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/vkall_ads_category_messenger"
+        android:key="vkall_ads_cat_messenger"
+        app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_messenger_title"
+            android:summary="@string/vkall_ads_messenger_summary"
+            android:key="vkall_ads_messenger"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_advertising_outline_28" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/vkall_ads_category_stories"
+        android:key="vkall_ads_cat_stories"
+        app:layout="@layout/item_preference_category">
+        <com.vk.prefui.views.MaterialSwitchPreference
+            android:layout="@layout/item_preference"
+            android:title="@string/vkall_ads_stories_title"
+            android:summary="@string/vkall_ads_stories_summary"
+            android:key="vkall_ads_stories"
+            android:defaultValue="true"
+            android:icon="@drawable/vk_icon_block_outline_28" />
+    </PreferenceCategory>
+</PreferenceScreen>

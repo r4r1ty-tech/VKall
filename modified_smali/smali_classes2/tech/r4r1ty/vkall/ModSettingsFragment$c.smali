@@ -1,4 +1,4 @@
-.class final synthetic Ltech/r4r1ty/vkall/ModSettingsFragment$a;
+.class final synthetic Ltech/r4r1ty/vkall/ModSettingsFragment$c;
 .super Ljava/lang/Object;
 .source "ModSettingsFragment.java"
 
@@ -14,7 +14,7 @@
 .method constructor <init>(Ltech/r4r1ty/vkall/ModSettingsFragment;)V
     .locals 0
 
-    iput-object p1, p0, Ltech/r4r1ty/vkall/ModSettingsFragment$a;->a:Ltech/r4r1ty/vkall/ModSettingsFragment;
+    iput-object p1, p0, Ltech/r4r1ty/vkall/ModSettingsFragment$c;->a:Ltech/r4r1ty/vkall/ModSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,7 +26,7 @@
 .method public final eh(Landroidx/preference/Preference;)Z
     .locals 3
 
-    iget-object p1, p0, Ltech/r4r1ty/vkall/ModSettingsFragment$a;->a:Ltech/r4r1ty/vkall/ModSettingsFragment;
+    iget-object p1, p0, Ltech/r4r1ty/vkall/ModSettingsFragment$c;->a:Ltech/r4r1ty/vkall/ModSettingsFragment;
 
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
 
@@ -41,7 +41,7 @@
     :cond_0
     new-instance v0, Lxsna/oz50;
 
-    const-class v1, Ltech/r4r1ty/vkall/EncryptionSettingsFragment;
+    const-class v1, Ltech/r4r1ty/vkall/PrivacySettingsFragment;
 
     const/4 v2, 0x0
 

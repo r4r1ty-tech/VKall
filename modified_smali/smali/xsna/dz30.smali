@@ -376,6 +376,14 @@
     .line 89
     iget-object p2, p0, Lxsna/dz30;->d:Ljava/lang/String;
 
+    iget-object v1, p0, Lxsna/dz30;->c:Lcom/vk/dto/common/Peer;
+
+    invoke-static {v1, p2}, Ltech/r4r1ty/vkall/crypto/MsgCrypto;->encryptOutgoingPeer(Lcom/vk/dto/common/Peer;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lxsna/dz30;->d:Ljava/lang/String;
+
     .line 90
     .line 91
     invoke-virtual {v0, p1, p2}, Lxsna/ij20$a;->i(Ljava/lang/String;Ljava/lang/String;)Lxsna/ij20$a;

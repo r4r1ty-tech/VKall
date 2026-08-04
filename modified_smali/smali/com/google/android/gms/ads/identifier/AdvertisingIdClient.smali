@@ -124,15 +124,27 @@
 
 .method public static getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-    .locals 2
+    .locals 3
 
-    new-instance v0, Ljava/io/IOException;
+    # VKall: stable fake GAID (LAT=true) — do not throw (breaks libverify SMS)
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->gaid()Ljava/lang/String;
 
-    const-string v1, "GAID blocked"
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    if-nez v0, :vkall_gaid_ok
 
-    throw v0
+    const-string v0, "00000000-0000-4000-8000-000000000000"
+
+    :vkall_gaid_ok
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->gaidLimitTracking()Z
+
+    move-result v1
+
+    new-instance v2, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+
+    invoke-direct {v2, v0, v1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;-><init>(Ljava/lang/String;Z)V
+
+    return-object v2
 
 .end method
 
@@ -155,15 +167,25 @@
 
 .method private final zzf(I)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-    .locals 2
+    .locals 3
 
-    new-instance v0, Ljava/io/IOException;
+    # VKall: same stable fake GAID as getAdvertisingIdInfo
+    invoke-static {}, Ltech/r4r1ty/vkall/privacy/DevicePrivacyShield;->gaid()Ljava/lang/String;
 
-    const-string v1, "GAID blocked"
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    if-nez v0, :vkall_zzf_ok
 
-    throw v0
+    const-string v0, "00000000-0000-4000-8000-000000000000"
+
+    :vkall_zzf_ok
+    const/4 v1, 0x1
+
+    new-instance v2, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
+
+    invoke-direct {v2, v0, v1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;-><init>(Ljava/lang/String;Z)V
+
+    return-object v2
 
 .end method
 
